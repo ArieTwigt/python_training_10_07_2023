@@ -14,9 +14,11 @@ if name[0].lower() == "a":
 # Assignment 2 - Create a conditional statement that indicates if your name begins with a vowel. If it does, change it into a non-vowel and otherwise. For example: Arie –> Brie or Rose –> Aose
 
 #%%
+name = "Arie"
+
 vowels = "aeoui"
 
-if name[0].lower in vowels:
+if name[0].lower() in vowels:
     name = name.replace(name[0], "B")
     print(name)
 else:
