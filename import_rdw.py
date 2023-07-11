@@ -3,20 +3,27 @@ import requests
 import sys
 
 selected_brand = input("Voer merk in:\n")
-selected_brand_upper = selected_brand.upper()
 
-endpoint = f"https://opendata.rdw.nl/resource/m9d7-ebf2.json?merk={selected_brand_upper}"
+selected_brands_list = selected_brand.split(" ")
 
-response = requests.get(endpoint)
+for brand in selected_brands_list:
+    print(f"Downloading cars for brand {brand}")
+    selected_brand_upper = brand.upper()
 
-# %%
-data = response.json()
+    endpoint = f"https://opendata.rdw.nl/resource/m9d7-ebf2.json?merk={selected_brand_upper}"
 
-#%%
-if len(data) == 0:
-    print(f"No cars found for {selected_brand}")
-    sys.exit()
+    response = requests.get(endpoint)
 
-#%%
-print(data[0])
+    # %%
+    data = response.json()
+
+    #%%
+    if len(data) == 0:
+        print(f"No cars found for {brand}")
+        continue
+
+    #%%
+    print(data[0])
+
+    print(f"Finished downloading for brand {brand}")
 # %%
