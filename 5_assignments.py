@@ -50,6 +50,7 @@ else:
 # Assignment 3
 
 #%% a
+
 age = 20
 
 if age > 18 and age < 68:
@@ -64,4 +65,5 @@ if 18 <= age <= 68:
     print("Your age is between 18 and 68")
 else:
     print("It is not")
+
 # %%
