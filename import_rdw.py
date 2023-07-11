@@ -52,4 +52,4 @@ for brand in selected_brands_list:
     data_df_filtered.to_csv(file_path, sep=";", index=False)
 
     print(f"Finished exporting for brand {brand}")
-# %%
+
