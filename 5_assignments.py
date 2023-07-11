@@ -25,6 +25,27 @@ else:
     name = name.replace(name[0], "A")
 
 
+#%% b
+import string
+import random
+
+all_letters = list(string.ascii_lowercase)
+vowels = ['a', 'e', 'o', 'u', 'i']
+non_vowels = [letter for letter in all_letters if letter not in vowels]
+
+
+name = "Dirk"
+
+if name[0].lower() in vowels:
+    random_letter = random.choice(non_vowels)
+    name = name.replace(name[0], random_letter.upper())
+    print(name)
+else:
+    random_letter = random.choice(vowels)
+    name = name.replace(name[0], random_letter.upper())
+    print(name)
+
+
 # Assignment 3
 
 #%% a
